@@ -1,0 +1,17 @@
+import org.gradle.api.artifacts.*
+
+apply plugin: 'base' // To add "clean" task to the root project.
+
+// Enable spring boot plugin
+buildscript {
+    repositories {
+        mavenCentral();
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+subprojects {
+    apply from: rootProject.file('common.gradle')
+}

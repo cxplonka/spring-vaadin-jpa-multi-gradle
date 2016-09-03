@@ -1,0 +1,46 @@
+//
+// This file is to be applied to every subproject.
+//
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'spring-boot'
+
+String mavenGroupId = 'com.cxplonka'
+String mavenVersion = '1.0-snapshot'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral();
+    
+    // vaadin4spring
+    maven {        
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+// Adding dependencies here will add the dependencies to each subproject.
+dependencies {
+    // Spring Boot
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
+    
+    // JUnit 5
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M2")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M2")
+}
+
+String mavenArtifactId = name
+
+group = mavenGroupId
+version = mavenVersion
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        groupId = mavenGroupId
+        artifactId = mavenArtifactId
+        version = mavenVersion
+    }
+}
