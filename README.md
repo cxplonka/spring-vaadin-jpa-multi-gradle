@@ -1,0 +1,1 @@
+# Spring-Boot-Data example with Vaadin-Spring-Boot and multi gradle build
