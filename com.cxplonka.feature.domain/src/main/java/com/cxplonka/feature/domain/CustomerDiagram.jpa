@@ -12,7 +12,9 @@
             <jpa:a>_14729049143616</jpa:a>
             <jpa:a>_14729049160177</jpa:a>
         </jpa:con>
-        <jpa:con am="PUBLIC" e="true"/>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:pre>// default constructor for hibernate/jaxb</jpa:pre>
+        </jpa:con>
         <jpa:attributes>
             <jpa:basic attribute-type="String" visibile="true" name="firstName" id="_14729049143616">
                 <jpa:bv/>
@@ -32,7 +34,7 @@
     <jpa:diagram>
         <plane elementRef="_14728927027511">
             <shape elementRef="_1472904831746">
-                <Bounds x="405.0" y="365.0" width="148.0" height="113.0"/>
+                <Bounds x="401.0" y="365.0" width="148.0" height="113.0"/>
             </shape>
         </plane>
     </jpa:diagram>

@@ -32,6 +32,7 @@ public class Customer implements Serializable {
     }
 
     public Customer() {
+// default constructor for hibernate/jaxb
     }
 
     public Long getId() {

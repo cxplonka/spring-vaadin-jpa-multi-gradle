@@ -16,7 +16,7 @@ repositories {
     mavenCentral();
     
     // vaadin4spring
-    maven {        
+    maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots'
     }
 }
