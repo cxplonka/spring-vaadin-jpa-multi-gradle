@@ -1,46 +1,57 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.cxplonka.feature.domain;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author cplonka
+ * @author  cplonka
  */
 @Entity
-public class Customer {
+public class Customer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private String firstName;
-    private String lastName;
+    private Long id;
 
-    protected Customer() {
-    }
+    @Column(nullable = false)
+    @Basic
+    private String firstName;
+
+    @Column(nullable = false)
+    @Basic
+    private String lastName;
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Customer() {
     }
 
-    public String getLastName() {
-        return lastName;
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -49,8 +60,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+        return "Customer{" + " id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + '}';
     }
+
 }
