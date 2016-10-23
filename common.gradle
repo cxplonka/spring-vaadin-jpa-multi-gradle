@@ -25,7 +25,22 @@ repositories {
 dependencies {
     // Spring Boot
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-web")
+//    compile("org.springframework.boot:spring-boot-starter-security")
+    
+    // SpringBoot-Actuator & Hawtio
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("io.hawt:hawtio-springboot:1.4.66")
+    
+    // Apache Camel
+    compile("org.apache.camel:camel-spring-boot-starter:2.18.0")
+    compile("org.apache.camel:camel-stream-starter:2.18.0")
+    
     compile("com.h2database:h2")
+    
+    // javax.validation
+    compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.2.4.Final'
     
     // JUnit 5
     testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M2")

@@ -6,7 +6,7 @@
 package com.cxplonka.feature.ui.vaadin;
 
 import com.cxplonka.feature.domain.Customer;
-import com.cxplonka.feature.service.CustomerRepository;
+import com.cxplonka.feature.service.repository.CustomerRepository;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -25,7 +25,7 @@ import org.springframework.util.StringUtils;
 @SpringView(name = DataTableView.VIEW_NAME)
 public class DataTableView extends VerticalLayout implements View {
 
-    public static final String VIEW_NAME = "datatableui";
+    public static final String VIEW_NAME = "vaadin.data.table.ui";
 
     @Autowired
     private CustomerRepository repo;
@@ -48,7 +48,7 @@ public class DataTableView extends VerticalLayout implements View {
 
         TextField filter = new TextField("Filter by last name");
         filter.addTextChangeListener(e -> filterCustomers(e.getText()));
-        
+
         filterCustomers(null);
         grid.setSizeFull();
 

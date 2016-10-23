@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cxplonka.feature.service;
+package com.cxplonka.feature.service.repository;
 
 import com.cxplonka.feature.domain.Customer;
 import java.util.List;

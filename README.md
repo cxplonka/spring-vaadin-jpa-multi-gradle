@@ -1,11 +1,13 @@
 # Spring-Boot-Data example with Vaadin-Spring-Boot and multi gradle build
 
-An example project for to evaluate an test the following technology stack:
+An example project to evaluate an test the following technology stack:
 
 * [JPA Modeller](http://jpamodeler.github.io/) for modelling the persistance layer
 * [Gradle](https://gradle.org/) as the build system, with the [Spring Boot Gradle plugin](http://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-gradle-plugin.html)
 * [Vaadin](https://vaadin.com/home) for the presentation layer
 * [Spring-Boot-Starter](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters) for the enterprise backend
+* [Apache Camel](http://camel.apache.org/) for Enterprise Integration Patterns
+* [hawtio](http://hawt.io/) as modular web console, for discove metrics, camel routes etc.
 
 The application is separated in sub-projects for the domain-model, the service layer, the user interface and the application 
 itself.
