@@ -8,6 +8,8 @@ apply plugin: 'spring-boot'
 String mavenGroupId = 'com.cxplonka'
 String mavenVersion = '1.0-snapshot'
 
+project.ext.springBootVersion = "1.4.1.RELEASE"
+
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
@@ -24,19 +26,21 @@ repositories {
 // Adding dependencies here will add the dependencies to each subproject.
 dependencies {
     // Spring Boot
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-web")
-//    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+//    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
     
     // SpringBoot-Actuator & Hawtio
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
     compile("io.hawt:hawtio-springboot:1.4.66")
     
     // Apache Camel
     compile("org.apache.camel:camel-spring-boot-starter:2.18.0")
     compile("org.apache.camel:camel-stream-starter:2.18.0")
     
+    // Database
     compile("com.h2database:h2")
+    compile("postgresql:postgresql:9.1-901-1.jdbc4")
     
     // javax.validation
     compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'

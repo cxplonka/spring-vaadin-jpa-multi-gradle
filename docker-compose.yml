@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+    db:
+        image: postgres
+        ports:
+            - "5432:5432" 
+        environment:
+            POSTGRES_DB: spring-postgres
+            POSTGRES_USER: cplonka
+            POSTGRES_PASSWORD: cplonka
+       
+    spring-boot-example:
+        depends_on:
+            - db
+        build: .                                # the image will be build
+        links:
+            - db
+        ports:
+            - "8080:8080"                       # expose to outside of the composition
+        environment:
+            - DB_HOST=db:5432                   # host and port of the DB   
+            - DB_NAME=spring-postgres
+            - DB_USER=cplonka
+            - DB_PASSWORD=cplonka
+            - "SPRING_PROFILES_ACTIVE=docker-postgres"
