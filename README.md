@@ -7,7 +7,7 @@ An example project to evaluate an test the following technology stack:
 * [Vaadin](https://vaadin.com/home) for the presentation layer.
 * [Spring-Boot-Starter](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters) for the enterprise backend.
 * [Apache Camel](http://camel.apache.org/) for Enterprise Integration Patterns.
-* [hawtio](http://hawt.io/) as modular web console, for discove metrics, camel routes etc.
+* [hawtio](http://hawt.io/) as modular web console, for discover metrics, camel routes etc.
 * [jailer](https://github.com/Wisser/Jailer) an tool for database subsetting, schema and data browsing. Perfect for create consistent DB test data.
 * [Docker](https://www.docker.com/) for a new level of application deployment, management and orchestration.
 
@@ -34,8 +34,8 @@ docker-compose up -d
 
 ```
 
-it will use the <spring-profile = docker-postgres>.
+it will use the [spring-profile = docker-postgres].
 
 and access: 
- * Vaadin UI -> [localhost:8080](http://localhost:8080/)
- * Hawtio Web-Console -> [localhost:8080/hawtio](http://localhost:32768/hawtio/index.html)
+ * Vaadin UI - [localhost:8080](http://localhost:8080/)
+ * Hawtio Web-Console - [localhost:8080/hawtio](http://localhost:32768/hawtio/index.html)
