@@ -17,4 +17,12 @@ dependencies {
     compile project(':com.cxplonka.feature.domain')
     compile project(':com.cxplonka.feature.service')
     compile project(':com.cxplonka.feature.ui.vaadin')
+    
+    // monitoring
+    compile("io.hawt:hawtio-springboot:1.4.66")
+    compile("net.bull.javamelody:javamelody-core:1.62.0")
+    
+    // Database
+    compile("com.h2database:h2")
+    compile("postgresql:postgresql:9.1-901-1.jdbc4")
 }

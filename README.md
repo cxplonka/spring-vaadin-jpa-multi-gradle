@@ -7,8 +7,9 @@ An example project to evaluate an test the following technology stack:
 * [Vaadin](https://vaadin.com/home) for the presentation layer.
 * [Spring-Boot-Starter](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters) for the enterprise backend.
 * [Apache Camel](http://camel.apache.org/) for Enterprise Integration Patterns.
-* [hawtio](http://hawt.io/) as modular web console, for discover metrics, camel routes etc.
-* [jailer](https://github.com/Wisser/Jailer) an tool for database subsetting, schema and data browsing. Perfect for create consistent DB test data.
+* [Hawtio](http://hawt.io/) as modular web console, for discover metrics, camel routes etc.
+* [Javamelody](https://github.com/javamelody/javamelody/wiki) for time-series based monitoring of metrics (jdbc, sql, memory, http, etc.)
+* [Jailer](https://github.com/Wisser/Jailer) an tool for database subsetting, schema and data browsing. Perfect for create consistent DB test data.
 * [Docker](https://www.docker.com/) for a new level of application deployment, management and orchestration.
 
 The application is separated in sub-projects for the domain-model, the service layer, the user interface and the application 
@@ -38,4 +39,5 @@ it will use the [spring-profile = docker-postgres].
 
 and access: 
  * Vaadin UI - [localhost:8080](http://localhost:8080/)
- * Hawtio Web-Console - [localhost:8080/hawtio](http://localhost:32768/hawtio/index.html)
+ * Hawtio Web-Console - [localhost:8080/hawtio](http://localhost:8080/hawtio/index.html)
+ * Javamelody UI - [localhost:8080/monitoring](http://localhost:8080/monitoring)
