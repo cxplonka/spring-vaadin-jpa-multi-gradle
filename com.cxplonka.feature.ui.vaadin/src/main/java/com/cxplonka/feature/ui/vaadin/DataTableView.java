@@ -7,7 +7,6 @@ package com.cxplonka.feature.ui.vaadin;
 
 import com.cxplonka.feature.domain.Customer;
 import com.cxplonka.feature.service.repository.CustomerRepository;
-import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.SpringView;
@@ -30,10 +29,10 @@ public class DataTableView extends VerticalLayout implements View {
     @Autowired
     private CustomerRepository repo;
 
-    private final Grid grid;
+    private final Grid<Customer> grid;
 
     public DataTableView() {
-        this.grid = new Grid();
+        this.grid = new Grid(Customer.class);
     }
 
     @PostConstruct
@@ -47,7 +46,7 @@ public class DataTableView extends VerticalLayout implements View {
         setSizeFull();
 
         TextField filter = new TextField("Filter by last name");
-        filter.addTextChangeListener(e -> filterCustomers(e.getText()));
+        filter.addValueChangeListener(e -> filterCustomers(e.getValue()));
 
         filterCustomers(null);
         grid.setSizeFull();
@@ -58,10 +57,9 @@ public class DataTableView extends VerticalLayout implements View {
 
     private void filterCustomers(String lastName) {
         if (StringUtils.isEmpty(lastName)) {
-            grid.setContainerDataSource(new BeanItemContainer<>(Customer.class, repo.findAll()));
+            grid.setItems(repo.findAll());
         } else {
-            grid.setContainerDataSource(new BeanItemContainer(Customer.class,
-                    repo.findByLastNameStartsWithIgnoreCase(lastName)));
+            grid.setItems(repo.findByLastNameStartsWithIgnoreCase(lastName));
         }
     }
 

@@ -2,6 +2,10 @@ import org.gradle.api.artifacts.*
 
 apply plugin: 'base' // To add "clean" task to the root project.
 
+project.ext.springBootVersion = "1.5.2.RELEASE"
+
+project.ext.vaadinVersion = "8.0.0"
+
 // Enable spring boot plugin
 buildscript {
     repositories {
@@ -11,7 +15,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
         classpath("gradle.plugin.ua.eshepelyuk.gradle.jaxrsAnalyzer:gradle-jaxrs-analyzer-plugin:0.1.5")
     }
 }

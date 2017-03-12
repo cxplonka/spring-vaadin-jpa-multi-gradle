@@ -13,16 +13,22 @@ if (!hasProperty('mainClass')) {
     ext.mainClass = ''
 }
 
+dependencyManagement {
+  imports {
+    mavenBom 'com.vaadin:vaadin-bom:8.0.0'
+  }
+}
+
 dependencies {
     compile project(':com.cxplonka.feature.domain')
     compile project(':com.cxplonka.feature.service')
     compile project(':com.cxplonka.feature.ui.vaadin')
     
     // monitoring
-    compile("io.hawt:hawtio-springboot:1.4.66")
-    compile("net.bull.javamelody:javamelody-core:1.62.0")
+    compile("io.hawt:hawtio-springboot:1.5.+")
+    compile("net.bull.javamelody:javamelody-spring-boot-starter:1.64.0")
     
     // Database
-    compile("com.h2database:h2")
+    compile("com.h2database:h2:1.4.193")
     compile("postgresql:postgresql:9.1-901-1.jdbc4")
 }
