@@ -1,43 +1,42 @@
 package com.cxplonka.feature.domain;
 
-import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-/**
- * @author  cplonka
- */
+
 @Entity
-public class Customer implements Serializable {
+public class Customer { 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, length = 30)
-    @Basic
+    @Column(nullable=false,length=30)
+    @Basic(fetch = FetchType.LAZY)
     @NotNull
-    @Size(min = 1, max = 30)
+    @Size(min=1,max=30)
     private String firstName;
 
-    @Column(nullable = false, length = 30)
-    @Basic
+    @Column(nullable=false,length=30)
+    @Basic(fetch = FetchType.LAZY)
     @NotNull
-    @Size(min = 1, max = 30)
+    @Size(min=1,max=30)
     private String lastName;
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+
+    public Customer(String firstName,String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
     }
 
-    public Customer() {
+    public Customer(){
 // default constructor for hibernate/jaxb
     }
 
@@ -64,6 +63,7 @@ public class Customer implements Serializable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 
     @Override
     public String toString() {

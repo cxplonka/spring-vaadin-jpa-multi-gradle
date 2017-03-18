@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.cxplonka.feature.domain" v="1.5.4" thm="PDarkColorScheme" dbthm="PDarkColorScheme" sm="false" xs="false" id="_14728927027511" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:entity lbl-ref="_14729048317771" xre="false" compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" v="true" minimized="false" rootElement="_14728927027511" id="_1472904831746">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.cxplonka.feature.domain" v="1.5.4" rws="_14893402752261" Pws="_14893402752261" cws="_14893402752261" thm="PDarkColorScheme" dbthm="PDarkColorScheme" sm="false" xs="false" id="_14728927027511" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity lbl-ref="_14729048317771" xre="false" compositePrimaryKeyClass="CustomerPK" abs="false" class="Customer" v="true" m="false" rootElement="_14728927027511" id="_1472904831746">
         <jpa:ts e="true">
             <jpa:a>_14729048317771</jpa:a>
             <jpa:a>_14729049143616</jpa:a>
@@ -16,14 +16,14 @@
             <jpa:pre>// default constructor for hibernate/jaxb</jpa:pre>
         </jpa:con>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="firstName" id="_14729049143616">
+            <jpa:basic fetch="LAZY" attribute-type="String" v="true" name="firstName" id="_14729049143616">
                 <jpa:bv>
                     <jpa:nn/>
                     <jpa:si mi="1" ma="30"/>
                 </jpa:bv>
                 <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="30" precision="0" scale="0"/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="lastName" id="_14729049160177">
+            <jpa:basic fetch="LAZY" attribute-type="String" v="true" name="lastName" id="_14729049160177">
                 <jpa:bv>
                     <jpa:nn/>
                     <jpa:si mi="1" ma="30"/>
@@ -37,11 +37,12 @@
         </jpa:attributes>
     </jpa:entity>
     <jpa:c/>
-    <jpa:diagram>
-        <plane elementRef="_14728927027511">
-            <shape elementRef="_1472904831746">
-                <Bounds x="324.0" y="247.0" width="148.0" height="113.0"/>
-            </shape>
-        </plane>
-    </jpa:diagram>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14893402752261">
+            <i ref="_1472904831746" x="324" y="247"/>
+        </jpa:ws>
+        <jpa:ws n="Basic" id="_14893403030403">
+            <i ref="_1472904831746"/>
+        </jpa:ws>
+    </jpa:wsl>
 </jpa:entity-mappings>
